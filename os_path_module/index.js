@@ -13,7 +13,7 @@ console.log(os.freemem());
 console.log("Other way to declaration ");
 
 const {totalmem,freemem} = require("os");
-//total memory show
+//total memory showm
 console.log(os.totalmem());
 //free memory show
 console.log(os.freemem());
