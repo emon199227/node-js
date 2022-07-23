@@ -1,0 +1,7 @@
+https://www.npmjs.com
+
+first go to project index file then open terminal commend 
+"npn init"---->
+package name ===>enter
+version ===>enter
+description : write to do 

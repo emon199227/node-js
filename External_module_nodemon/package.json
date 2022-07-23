@@ -1,0 +1,25 @@
+{
+  "name": "external_module_nodemon",
+  "version": "1.0.0",
+  "description": "this npn testing project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npn",
+    "node",
+    "js",
+    "nodemon"
+  ],
+  "author": "emon",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "this testion project enterneal module "
+  },
+  "dependencies": {
+    "random-fruits-name": "^1.9.5",
+    "random-movie-names": "^1.0.2"
+  }
+}
