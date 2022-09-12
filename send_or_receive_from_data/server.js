@@ -7,17 +7,20 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 //registration 
-app.get("/register",(req,res)=>{
-    res.sendFile()
-})
+app.get("/regi",(req,res)=>{
+    res.sendFile(__dirname+"/register.html");
+});
 
 
-app.post("/register",(req,res)=>{
+app.post("/regi",(req,res)=>{
+
+    const fullName = req.body.fullName;
+    const age = req.body.age;
     
-    res.send("Welcome ");
+    res.send(`<h2>Your Name is :${fullName}<br> age is :${age}</h2>`);
     
 
-})
+});
 
 app.listen(PORT ,()=>{
     console.log(`Server is running at http://localhost:${PORT} `);
