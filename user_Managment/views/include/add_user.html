@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Managment | Add User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css"
+</head>
+
+<body>
+    <!--header -->
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <a href="" class="nav-brand text-dark">User Managment System </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/header-->
+    <!--Main Site-->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="#" ><i class="fas fa-angle-double-left"></i>All Users</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">New User</h2>
+                <span class="text-light">Use the below form to Create a new account</span>
+            </div>
+            <!--Form Handeling -->
+            <form  method="post" id="update_user">
+                <div class="new-user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">
+                            Name
+                        </label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="name" value="" placeholder="Mark Stoenis">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-light">
+                            Email
+                        </label>
+                        <input type="hidden" name="Email" value="">
+                        <input type="text" name="email" value="" placeholder="emon199227@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="text-light">
+                            Gender
+                        </label>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-2" name="gender" value="male">
+                            <label for="radio-2" class="radio-label">Male</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-3" name="gender" value="female">
+                            <label for="radio-3" class="radio-label">Female</label>
+                        </div>
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="text-light">
+                            Status
+                        </label>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-4" name="gender" value="Active">
+                            <label for="radio-4" class="radio-label">Active</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-5" name="gender" value="InActive">
+                            <label for="radio-5" class="radio-label">InActive</label>
+                        </div>
+                    
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+
+                </div>
+            </form>
+            <!--/Form Handeling -->
+        </div>
+    </main>
+
+    <!--/Main Site-->
+    
+
+
+</body>
+
+</html>
