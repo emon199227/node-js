@@ -1,0 +1,38 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "Learn with Sumit Node.js Chat Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon app.js",
+    "prod": "cross-env NODE_ENV=production node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learnwithsumit/chat-application.git"
+  },
+  "author": "Sumit Saha <sumit.analyzen@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/learnwithsumit/chat-application/issues"
+  },
+  "homepage": "https://github.com/learnwithsumit/chat-application#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "mongoose": "^5.12.11",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
