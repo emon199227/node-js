@@ -14,7 +14,7 @@ const PORT = 8005;
 //connected to db
 const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb://127.0.0.1:27017/userTestFile");
+        await mongoose.connect("mongodb+srv://admin:admin123@cluster0.oigu0d0.mongodb.net/usermanagmentfile?retryWrites=true&w=majority");
         console.log("Database Connected");
     } catch (error) {
         console.log("Database Not Connected");
