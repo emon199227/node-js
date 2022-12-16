@@ -1,34 +1,34 @@
 <div class="col-sm-6 col-md-6 col-sm-offset-3">
-    <form action="/book/add-book" method="post">
-<div class="form-group">
-  <label for="book_name">Book Name:</label>
-  <input type="text" name="book_name" class="form-control" id="book_name" placeholder="Enter Book name">
-</div>
-<div class="form-group">
-  <label for="book_name">COver Image:</label>
-<input type="file" class="form-control-file" name="cover_image" id="cover_image">
-</div>
-<div class="form-group">
-  <label for="author_name">Author Name:</label>
-  <input type="text" name="author_name" class="form-control" id="author_name" placeholder="Enter Book Author name">
-</div>
-<div class="form-group">
-  <label for="isbn">ISBN:</label>
-  <input type="text" name="isbn" class="form-control" id="isbn" placeholder="Enter ISBN Number">
-</div>
-<div class="form-group">
-  <label for="genres">Genres:</label>
-  <input type="text" name="genres" class="form-control" id="genres" placeholder="Enter Genres name">
-</div>
-<div class="form-group">
-  <label for="publisher">Publisher:</label>
-  <input type="text" name="publisher" class="form-control" id="publisher" placeholder="Enter Publisher name">
-</div>
-<button type="submit" class="btn btn-default btn-primary" onclick="succalart()">Add Book</button>
-</form>
-</div>
-<script>
-function succalart() {
-  alert("Book was added successfully !");
-}
-</script>
+            <form action="/book/add-book" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="book_name">Book Name:</label>
+                <input type="text" name="book_name" class="form-control" id="book_name"  placeholder="Enter Your Name ">
+            </div>
+            <div class="form-group">
+                <label for="book_name">Cover Image:</label>
+                <input type="file" name="image" id="image" class="form-control-file">
+            </div>
+            <div class="form-group">
+                <label for="author_name">Author Name:</label>
+                <input type="text" name="author_name" class="form-control" id="author_name" placeholder="Enter Book Author name">
+              </div>
+              <div class="form-group">
+                <label for="isbn">ISBN:</label>
+                <input type="text" name="isbn" class="form-control" id="isbn" placeholder="Enter ISBN Number">
+              </div>
+              <div class="form-group">
+                <label for="genres">Genres:</label>
+                <input type="text" name="genres" class="form-control" id="genres" placeholder="Enter Genres name">
+              </div>
+              <div class="form-group">
+                <label for="publisher">Publisher:</label>
+                <input type="text" name="publisher" class="form-control" id="publisher" placeholder="Enter Publisher name">
+              </div>
+           
+        <button type="submit" class="btn btn-default btn-primary">Register</button>
+    
+    
+    </div>
+    
+        </form>
+    </div>
