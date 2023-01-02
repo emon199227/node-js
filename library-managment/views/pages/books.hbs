@@ -1,13 +1,23 @@
-<ul class="list-group">
-    {{#each books}}
-<li class="list-group-item">
-    Book Name : {{this.book_name}}
-    <img src='/uploads/{{this.image}}' width="200" height="200"> <br>
-    Author : {{this.author_name}}
-    ISBN : {{this.isbn}}
-    </li>  
-   {{/each}}
-</ul>
 
-{{!-- {{this.cover_image}}  --}}
 
+<h2 align="center">Total Book List</h2>
+
+<table>
+    
+  <tr>
+    <th>&#8195;&#8195;&#8195;&#8195;&#8195;Book name</th>
+    <th>Author</th>
+    <th>ISBN</th>
+    <th>Genres</th>
+    <th>Publisher</th>
+  </tr>
+  {{#each books}}
+  <tr>
+    <td><img src='/uploads/{{this.image}}' width="50" height="50"> &nbsp;&nbsp;&nbsp;{{this.book_name}}</td>
+    <td>{{this.author_name}}</td>
+    <td>{{this.isbn}}</td>
+    <td>{{this.genres}}</td>
+    <td>{{this.publisher}}</td>
+  </tr>
+{{/each}}  
+</table>
