@@ -2,16 +2,17 @@ var express = require('express');
 var router = express.Router();
 const multer = require("multer");
 const mongoose = require("mongoose");
-const {bookController} = require("../controllers");
+const {userController} = require("../controllers");
+const {authMiddleware} = require("../middlewares");
 const {upload}=require("../controllers/upload.controller");
 
 const Book = require("../model/book");
 
 /* GET home page. */
-router.get('/login',  bookController.displayBooks);
-router.get('/signup', bookController.addBookForm );
-router.get("/profile",upload.single("image"),bookController.addBook);
+router.get('/login',  userController.getLoginForm);
+router.get('/signup', userController.getSignUpForm );
+router.get("/profile",authMiddleware.auth,userController.getProfile);
  
-router.post('/login',  bookController.displayBooks);
-router.post('/signup', bookController.addBookForm );
+router.post('/login',  userController.login);
+router.post("/signup",upload.single("image"), userController.signup );
 module.exports = router;

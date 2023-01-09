@@ -4,6 +4,7 @@ const multer = require("multer");
 const mongoose = require("mongoose");
 const {bookController} = require("../../controllers");
 const {upload}=require("../../controllers/upload.controller");
+const {authMiddleware} = require("../../middlewares");
 
 const Book = require("../../model/book");
 
@@ -11,9 +12,9 @@ const Book = require("../../model/book");
 router.get('/',  bookController.displayBooks);
 
 //load book form 
-router.get('/add-book', bookController.addBookForm );
+router.get('/add-book',authMiddleware.auth, bookController.addBookForm );
 //add book
-router.post("/add-book",upload.single("image"),bookController.addBook);
+router.post("/add-book",authMiddleware.auth,upload.single("image"),bookController.addBook);
  
 
 module.exports = router;

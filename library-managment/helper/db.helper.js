@@ -17,7 +17,7 @@ module.exports = {
         return await Model.find(filter);
     },
     create: async (Model, body, next) => {
-        return await Model.save(body);
+        return await Model.create(body);
     },
     delete: async (Model, filter, next) => {
         return await Model.remove({ filter });

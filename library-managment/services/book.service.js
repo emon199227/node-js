@@ -1,5 +1,5 @@
 const Book = require('../model/book');
-const { dbHelper } = require("../helper/db.helper");
+const { dbHelper } = require("../helper");
 
 module.exports = {
     getAllBooks: async (next) => {
