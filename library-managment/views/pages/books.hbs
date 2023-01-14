@@ -10,6 +10,7 @@
     <th>ISBN</th>
     <th>Genres</th>
     <th>Publisher</th>
+    <th>Action</th>
   </tr>
   {{#each books}}
   <tr>
@@ -18,6 +19,7 @@
     <td>{{this.isbn}}</td>
     <td>{{this.genres}}</td>
     <td>{{this.publisher}}</td>
+    <td><a href="/book/purchase" class="btn btn-info">Purchase</a></td>
   </tr>
 {{/each}}  
 </table>
