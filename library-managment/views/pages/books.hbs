@@ -13,13 +13,15 @@
     <th>Action</th>
   </tr>
   {{#each books}}
+  <form method="post" action="/book/purchase/{{this._id}}">
   <tr>
     <td><img src='/uploads/{{this.image}}' width="50" height="50"> &nbsp;&nbsp;&nbsp;{{this.book_name}}</td>
     <td>{{this.author_name}}</td>
     <td>{{this.isbn}}</td>
     <td>{{this.genres}}</td>
     <td>{{this.publisher}}</td>
-    <td><a href="/book/purchase" class="btn btn-info">Purchase</a></td>
+    <td><button type="submit" class="btn btn-info">Purchase</button></td>
   </tr>
+  </form>
 {{/each}}  
 </table>

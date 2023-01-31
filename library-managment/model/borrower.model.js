@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 const borrower = new Schema({
     userId :{
         type:Schema.Types.ObjectId,
-        ref:'User',
+        ref:'user',
         require :[true,"User Id is Required "]
     },
     bookId :{
         type:Schema.Types.ObjectId,
-        ref:'Book',
+        ref:'book',
         require :[true,"Book Id is Required "]
     },
     purchaseDate :{

@@ -15,6 +15,8 @@ router.get('/',  bookController.displayBooks);
 router.get('/add-book',authMiddleware.auth, bookController.addBookForm );
 //add book
 router.post("/add-book",authMiddleware.auth,upload.single("image"),bookController.addBook);
+//purchase book
+router.post("/purchase/:bookId",authMiddleware.auth,bookController.purchaseBook);
  
 
 module.exports = router;

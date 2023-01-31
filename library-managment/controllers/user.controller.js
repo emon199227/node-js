@@ -2,6 +2,7 @@ const { userService, borrowerService } = require("../services");
 const bcrypt = require("bcrypt");
 const User = require("../model/user.model");
 const { tokenHelper } = require("../helper");
+const { findAll } = require("../helper/db.helper");
 module.exports = {
     getLoginForm: (req, res) => {
         res.render("form/login");
@@ -10,8 +11,9 @@ module.exports = {
         res.render("form/signup");
     },
     getProfile: async (req, res,next) => {
-        
-        res.render("form/profile");
+        const userId = req.userId;
+        const allPurchasedBook = await borrowerService.findAllPurchasedBooks(userId,next);
+        res.render("form/profile",{books:allPurchasedBook});
     },
     login: async (req, res, next) => {
         const { email, password } = req.body;

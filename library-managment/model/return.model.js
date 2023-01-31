@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 const returned = new Schema({
     userId :{
         type:Schema.Types.ObjectId,
-        ref:'User',
+        ref:'book',
         require :[true,"User Id is Required "]
     },
     bookId :{
         type:Schema.Types.ObjectId,
-        ref:'Book',
+        ref:'user',
         require :[true,"Book Id is Required "]
     },
     returnedDate :{

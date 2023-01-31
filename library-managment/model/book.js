@@ -25,6 +25,16 @@ const book = new Schema({
     publisher:{
         type:String,
         require:[true,"Publisher name is require "]
+    },
+    quantity:{
+        type:Number,
+        require:[true,"Quantity is require "],
+        default:100
+    },
+    price:{
+        type:Number,
+        require:[true,"Price is require "],
+        default:200
     }
 });
 
