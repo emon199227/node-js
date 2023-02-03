@@ -16,6 +16,6 @@ const fine = new Schema({
         default:Date.now
     }
     
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('Fine',fine);

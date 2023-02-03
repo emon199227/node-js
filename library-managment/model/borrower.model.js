@@ -21,6 +21,6 @@ const borrower = new Schema({
         default:true
     },
     
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('Borrower',borrower);

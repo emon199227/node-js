@@ -17,6 +17,6 @@ const returned = new Schema({
         default:Date.now
     }
     
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('Returned',returned);

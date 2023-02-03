@@ -33,6 +33,7 @@ const user = new Schema({
         require:[false,"Publisher name is require "],
         enum:["STUDENT","ADMIN","TEACHER"]
     }
-});
+    
+},{timestamps:true});
 
 module.exports = mongoose.model('user',user);

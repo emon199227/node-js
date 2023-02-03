@@ -36,6 +36,6 @@ const book = new Schema({
         require:[true,"Price is require "],
         default:200
     }
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('book',book);
