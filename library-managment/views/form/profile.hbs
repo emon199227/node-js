@@ -1,13 +1,16 @@
 <div class="container">
     <div class="jumbotron">
         <h1>User Profile </h1>
-
-
-        <p></p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Consectetur qui error minima voluptates labore recusandae
-            laborum dignissimos accusamus molestias nesciunt saepe voluptas, totam dolorum!
-            Iste, placeat illo. Earum, possimus quas?</p>
+<a href="/user/logout"><button type="button" class="btn btn-danger">Logout</button></a>
+       <div class="card">
+  <img src="/uploads/{{this.users.image}}" alt="Avatar" style="width:15%">
+  <div class="container">
+    <h4>Name : <b>{{this.users.name}}</b></h4>
+    <p>Id :<b>{{this.users.studentID}}</b> </p>
+    <p>E-mail :<b>{{this.users.email}}</b> </p>
+    <p>Role :<b>{{this.users.role}}</b> </p>
+  </div>
+</div>
     </div>
     <div class="profile-book-section">
         <h3>Purchased Books </h3>
@@ -19,4 +22,17 @@
             {{/each}}
         </ul>
     </div>
+     <div class="profile-book-section">
+        <h3>Fines  </h3>
+        <ul class="list-group">
+            
+            
+
+            <li class="list-group-item"> --- user Id : {{this.userId}} -- 
+                Fines : {{this.fines.amount}}</li>
+                
+            
+        </ul> 
+    </div>
+      
 </div>

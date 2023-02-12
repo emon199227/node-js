@@ -1,19 +1,50 @@
-const { userService, borrowerService } = require("../services");
+const { userService, borrowerService, fineService } = require("../services");
 const bcrypt = require("bcrypt");
 const User = require("../model/user.model");
+const finesmodel = require("../model/fine.model");
+const sess = require("express-session");
 const { tokenHelper } = require("../helper");
 const { findAll } = require("../helper/db.helper");
 module.exports = {
     getLoginForm: (req, res) => {
-        res.render("form/login");
+        
+            res.render("form/login");
+       
     },
     getSignUpForm: (req, res) => {
         res.render("form/signup");
     },
-    getProfile: async (req, res,next) => {
+    getLogoutForm: (req, res) => {
+  res.clearCookie('token');
+    return res.redirect('/user/login');
+},
+    getProfile: async (req, res, next) => {
         const userId = req.userId;
-        const allPurchasedBook = await borrowerService.findAllPurchasedBooks(userId,next);
-        res.render("form/profile",{books:allPurchasedBook});
+        const { bookId } = req.params;
+        const selectedUser = await userService.findUserById(userId, next);
+
+        const allPurchasedBook = await borrowerService.findAllPurchasedBooks(userId, next);
+        const allFineBook = await fineService.findBookFineById(userId,  next);
+        const allFineBookmain = await fineService.findAllFineBooks(userId, next);
+        // if (allFineBook && !allFineBook?.active) {
+        //     // book is already returned
+        //     res.locals.message = "Fine is already creadted ";
+        //     return res.redirect("/user/profile");
+        // }
+
+        const findAmount = allFineBook.amount;
+        const findId = allFineBook.userId;
+        const resultFinal = 0;
+
+        //const allFineBook = await fineService.findAllFineBooks(userId, next);
+       // console.log("amount:" + findAmount + " -- " + "Id:" + findId);
+        if (findAmount != 0) {
+            console.log("amount:" + findAmount  );
+        }
+        
+
+     res.render("form/profile", { books: allPurchasedBook, fines: allFineBook,users:selectedUser });
+        console.log("amount:" + findAmount);
     },
     login: async (req, res, next) => {
         const { email, password } = req.body;

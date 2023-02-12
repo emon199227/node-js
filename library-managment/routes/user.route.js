@@ -12,6 +12,7 @@ const Book = require("../model/book");
 router.get('/login',  userController.getLoginForm);
 router.get('/signup', userController.getSignUpForm );
 router.get("/profile",authMiddleware.auth,userController.getProfile);
+router.get("/logout", userController.getLogoutForm);
  
 router.post('/login',  userController.login);
 router.post("/signup",upload.single("image"), userController.signup );

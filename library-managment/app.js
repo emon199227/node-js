@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 const multer = require("multer");
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var logger = require('morgan');
 const expHbs = require('express3-handlebars');
 var bodyParser = require("body-parser");
@@ -23,7 +24,12 @@ var app = express();
 
 app.engine('hbs', expHbs({defaultLayout: 'layout', extname: '.hbs'}))
 app.set('view engine', 'hbs')
-
+//session save 
+app.use(session({
+  secret:'asdflkjhgqwertpoiuyzxcvmnbasdflkj',
+  resave: false,
+  saveUninitialized:false
+}));
 
 app.set(logger('dev'));
 app.use(express.json());

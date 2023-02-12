@@ -10,5 +10,22 @@ module.exports = {
             console.log(e.toString());
             next(e);
         }
+    },
+    findAllFineBooks: async (userId, next) => {
+        try {
+            return await dbHelper.findAll(fineModel, { userId, active: true }, { amount:1 }, next);
+            
+        } catch (e) {
+            console.log(e.toString());
+            next(e);
+        }
+    },
+    findBookFineById: async (userId,  next) => {
+        try {
+            return await dbHelper.findOne(fineModel, { userId }, {}, next);
+        } catch (e) {
+            console.log(e.toString());
+            next(e);
+        }
     }
 }
