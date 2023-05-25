@@ -10,11 +10,12 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             {{#if users.name}}
-            
+            <li><a href="/user/profile">Profile</a></li>
             <li><a href="/user/logout"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
              {{else}}
                <li><a href="/user/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="/user/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="/user/profile">Profile</a></li>
             {{/if}}
         </ul>
     </div>

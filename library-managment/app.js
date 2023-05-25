@@ -18,7 +18,8 @@ var app = express();
  * Make MongoDB connection
  */
 (async () => {
-    await mongoose.connect('mongodb://localhost:27017/lms');
+	await mongoose.connect('mongodb+srv://emon:emon@cluster0.3kjg8uh.mongodb.net/lms');
+    //await mongoose.connect('mongodb://127.0.0.1:27017/lms');
 })();
 
 

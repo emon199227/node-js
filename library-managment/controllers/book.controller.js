@@ -1,4 +1,5 @@
 const { bookService, fineService, borrowerService, returnService,userService } = require("../services");
+const Books = require("../model/book");
 
 module.exports = {
     displayBooks: async (req, res, next) => {
@@ -6,7 +7,7 @@ module.exports = {
         const books = await bookService.getAllBooks(next);
         console.log(res.locals)
         const selectedUser = await userService.findUserById(userId, next);
-        res.render("pages/books", { books , users:selectedUser});
+        res.render("pages/books", { books , users:selectedUser,});
     },
     addBookForm: function (req, res, next) {
         res.render('form/add-book');
@@ -21,10 +22,20 @@ module.exports = {
         // })
 
         try {
-            const book = await bookService.addBook(req.body, next);
+            const newBook = new Books({
+                book_name: req.body.book_name,
+                image: req.file.filename,
+                author_name: req.body.author_name,
+                isbn: req.body.isbn,
+                genres: req.body.genres,
+                publisher: req.body.publisher,
+            });
+            await newBook.save();
             res.redirect("/book");
-        } catch (e) {
-            console.log(e.toString());
+            // const book = await bookService.addBook(req.body, next);
+            // res.redirect("/book");
+        } catch (error) {
+            res.status(500).send(error);
         }
         //res.json({message: "book added successfully."});
     },

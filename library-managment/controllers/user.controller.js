@@ -32,19 +32,19 @@ module.exports = {
         //     return res.redirect("/user/profile");
         // }
 
-        const findAmount = allFineBook.amount;
-        const findId = allFineBook.userId;
+        //const findAmount = allFineBook.amount;
+        //const findId = allFineBook.userId;
         const resultFinal = 0;
 
         //const allFineBook = await fineService.findAllFineBooks(userId, next);
        // console.log("amount:" + findAmount + " -- " + "Id:" + findId);
-        if (findAmount != 0) {
-            console.log("amount:" + findAmount  );
-        }
+        // if (findAmount != 0) {
+        //     console.log("amount:" + findAmount  );
+        // }
         
 
      res.render("form/profile", { books: allPurchasedBook, fines: allFineBook,users:selectedUser });
-        console.log("amount:" + findAmount);
+        // console.log("amount:" + findAmount);
     },
     login: async (req, res, next) => {
         const { email, password } = req.body;
@@ -83,7 +83,7 @@ module.exports = {
                 studentID: req.body.studentID,
             });
             await newUser.save();
-            res.status(201).send(newUser + "<br>Data Store successfully");
+           // res.status(201).send(newUser + "<br>Data Store successfully");
             res.redirect("/user/login");
 
         } catch (error) {
